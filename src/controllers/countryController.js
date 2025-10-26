@@ -18,10 +18,7 @@ const { validateQueryParams } = require("../middleware/validator");
 const path = require("path");
 const fs = require("fs").promises;
 
-/**
- * POST /countries/refresh
- * Fetch all countries and exchange rates, then cache them in the database
- */
+// POST /countries/refresh - Fetch all countries and exchange rates, then cache them in the database
 async function refreshCountries(req, res, next) {
   try {
     // Fetch data from external APIs
@@ -59,10 +56,7 @@ async function refreshCountries(req, res, next) {
   }
 }
 
-/**
- * GET /countries
- * Get all countries from the DB with optional filters and sorting
- */
+// GET /countries - Get all countries from the DB with optional filters and sorting
 async function getCountries(req, res, next) {
   try {
     const validatedParams = validateQueryParams(req.query);
@@ -83,10 +77,7 @@ async function getCountries(req, res, next) {
   }
 }
 
-/**
- * GET /countries/:name
- * Get one country by name
- */
+// GET /countries/:name - Get one country by name
 async function getCountry(req, res, next) {
   try {
     const { name } = req.params;
@@ -107,10 +98,7 @@ async function getCountry(req, res, next) {
   }
 }
 
-/**
- * DELETE /countries/:name
- * Delete a country record
- */
+// DELETE /countries/:name - Delete a country record
 async function deleteCountry(req, res, next) {
   try {
     const { name } = req.params;
@@ -131,10 +119,7 @@ async function deleteCountry(req, res, next) {
   }
 }
 
-/**
- * GET /status
- * Show total countries and last refresh timestamp
- */
+// GET /status - Show total countries and last refresh timestamp
 async function getStatus(req, res, next) {
   try {
     const metadata = await getRefreshMetadata();
@@ -148,10 +133,7 @@ async function getStatus(req, res, next) {
   }
 }
 
-/**
- * GET /countries/image
- * Serve the generated summary image
- */
+// GET /countries/image - Serve the generated summary image
 async function getSummaryImage(req, res, next) {
   try {
     const cacheDir = path.join(process.cwd(), process.env.CACHE_DIR || "cache");
