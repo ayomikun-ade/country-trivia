@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["nodejs", "fontconfig", "freefont_ttf", "dejavu_fonts", "liberation_ttf"]
+
+[phases.install]
+cmds = ["pnpm install"]
+
+[start]
+cmd = "pnpm start"

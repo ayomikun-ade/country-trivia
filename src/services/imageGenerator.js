@@ -91,14 +91,14 @@ function generateSVG(
       <!-- Title -->
       <text x="${
         width / 2
-      }" y="60" fill="#ffffff" font-size="36" font-weight="bold" text-anchor="middle" font-family="Arial, sans-serif">
+      }" y="60" fill="#ffffff" font-size="36" font-weight="bold" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, FreeSans, Arial, sans-serif">
         Country Trivia Summary
       </text>
 
       <!-- Total Countries -->
       <text x="${
         width / 2
-      }" y="120" fill="#00d9ff" font-size="24" text-anchor="middle" font-family="Arial, sans-serif">
+      }" y="120" fill="#00d9ff" font-size="24" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, FreeSans, Arial, sans-serif">
         Total Countries: ${totalCountries}
       </text>
 
@@ -110,19 +110,19 @@ function generateSVG(
       <!-- Top 5 Header -->
       <text x="${
         width / 2
-      }" y="200" fill="#ffffff" font-size="28" font-weight="bold" text-anchor="middle" font-family="Arial, sans-serif">
+      }" y="200" fill="#ffffff" font-size="28" font-weight="bold" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, FreeSans, Arial, sans-serif">
         Top 5 Countries by Estimated GDP
       </text>
 
       <!-- Countries List -->
-      <g font-family="Arial, sans-serif">
+      <g font-family="DejaVu Sans, Liberation Sans, FreeSans, Arial, sans-serif">
         ${countriesHTML}
       </g>
 
       <!-- Timestamp -->
       <text x="${width / 2}" y="${
     height - 30
-  }" fill="#888888" font-size="16" text-anchor="middle" font-family="Arial, sans-serif">
+  }" fill="#888888" font-size="16" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, FreeSans, Arial, sans-serif">
         Last refreshed: ${timestamp}
       </text>
     </svg>
